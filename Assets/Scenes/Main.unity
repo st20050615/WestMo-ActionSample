@@ -779,7 +779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 875928285}
   stageTips:
-  - {fileID: 114390, guid: 16de06a814a1d403fbe161e9851bc37b, type: 3}
+  - {fileID: 3704535441082571852, guid: 13342db0b6323b54ba34ee99fd2caa39, type: 3}
   startTipIndex: 1
   preInstantiate: 5
   generatedStageList:
