@@ -879,7 +879,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: 20
   speedZ: 5
+  speedX: 3
   speedJump: 8
+  accelerationZ: 10
 --- !u!1001 &1047436990
 PrefabInstance:
   m_ObjectHideFlags: 0
