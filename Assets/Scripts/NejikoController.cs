@@ -14,6 +14,7 @@ public class NejikoController : MonoBehaviour
     int targetLane;
     int life = DefaultLife;
     float recoverTime = 0.0f;
+    float time = 0.0f;
 
     public float gravity;
     public float speedZ;
@@ -76,6 +77,8 @@ public class NejikoController : MonoBehaviour
 
         // 速度が0以上なら走っているフラグをtrueにする
         animator.SetBool("run", moveDirection.z > 0.0f);
+
+        time += Time.deltaTime;
     }
 
     public void MoveToLeft()
@@ -105,8 +108,8 @@ public class NejikoController : MonoBehaviour
     // CharacterControllerにコリジョンが生じたときの処理
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        // 何故か開始直後に当たり判定があるので10フレーム無視
-        if (Time.frameCount < 10) return;
+        // 何故か開始直後に当たり判定があるのでシーン切り替えから1秒無視
+        if (time < 1) return;
 
         if (IsStan()) return;
 
