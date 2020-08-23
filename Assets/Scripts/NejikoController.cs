@@ -105,6 +105,9 @@ public class NejikoController : MonoBehaviour
     // CharacterControllerにコリジョンが生じたときの処理
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
+        // 何故か開始直後に当たり判定があるので10フレーム無視
+        if (Time.frameCount < 10) return;
+
         if (IsStan()) return;
 
         if (hit.gameObject.tag == "Robo")
