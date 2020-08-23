@@ -26,6 +26,12 @@ public class GameController : MonoBehaviour
             // これ以降のUpdateは止める
             enabled = false;
 
+            // ハイスコアを更新
+            if (PlayerPrefs.GetInt("HighScore") < score)
+            {
+                PlayerPrefs.SetInt("HighScore", score);
+            }
+
             // 2秒後にReturnToTitleを呼び出す
             Invoke("ReturnToTitle", 2.0f);
         }
